@@ -1,5 +1,6 @@
 var _ = require('lodash');
-var Information = require('./model/information');
+var Information = require('./information');
+var CartItem = require('./cart-item');
 
 function Scanner() {
 

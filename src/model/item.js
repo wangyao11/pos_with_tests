@@ -6,3 +6,5 @@ function Item(barcode, name, unit, price) {
     this.unit = unit;
     this.price = price || 0.00;
 }
+
+module.exports = Item;

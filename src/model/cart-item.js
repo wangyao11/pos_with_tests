@@ -32,3 +32,5 @@ CartItem.prototype.getPromotionText = function() {
 
   return promotionText;
 };
+
+module.exports = CartItem;

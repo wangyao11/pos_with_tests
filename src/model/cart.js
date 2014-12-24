@@ -1,5 +1,5 @@
 var _ = require('lodash');
-
+var PromotionUtil = require('./judge-promotion')
 function Cart() {
    this.cartItems = [];
 }

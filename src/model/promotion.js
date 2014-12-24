@@ -1,5 +1,5 @@
 var _ = require('lodash');
-var Information = require('./model/information');
+var Information = require('./information');
 
 function Promotion(type, barcodes) {
     this.type = type;
@@ -7,5 +7,13 @@ function Promotion(type, barcodes) {
 }
 
 Promotion.all = function(){
-  return Information.loadPromotions();
+  return [
+    new Promotion('BUY_TWO_GET_ONE_FREE', [
+      'ITEM000000',
+      'ITEM000001',
+      'ITEM000005'
+    ])
+  ];
 };
+
+module.exports = Promotion;

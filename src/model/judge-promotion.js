@@ -1,4 +1,5 @@
 var _ = require('lodash');
+var Promotion = require('./promotion');
 
 function PromotionUtil(){
 
@@ -30,3 +31,5 @@ PromotionUtil.getPromotionType = function(cartItem) {
 
   return type;
 };
+
+module.exports = PromotionUtil;
