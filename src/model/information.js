@@ -1,4 +1,8 @@
-function loadAllItems() {
+function Information(){
+
+}
+
+Information.loadAllItems = function() {
     return [
         new Item('ITEM000000', '可口可乐', '瓶', 3.00),
         new Item('ITEM000001', '雪碧', '瓶', 3.00),
@@ -9,7 +13,7 @@ function loadAllItems() {
     ];
 }
 
-function loadPromotions() {
+Information.loadPromotions = function() {
     return [
         new Promotion('BUY_TWO_GET_ONE_FREE', [
             'ITEM000000',

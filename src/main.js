@@ -1,3 +1,8 @@
+var _ = require('lodash');
+var Scannar = require('./model/scanner');
+var Cart = require('./model/cart');
+var Inventory = require('./model/inventory');
+
 function printInventory(tags) {
   var scanner = new Scanner();
   var cart = new Cart();

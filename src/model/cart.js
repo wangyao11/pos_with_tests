@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 function Cart() {
    this.cartItems = [];
 }
@@ -73,3 +75,5 @@ Cart.prototype.getPayThePrice = function() {
   return this.getTotalPrices() - this.getPromotionTotalPrice();
 
 };
+
+module.exports = Cart;

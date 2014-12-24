@@ -1,8 +1,11 @@
+var _ = require('lodash');
+var Information = require('./model/information');
+
 function Scanner() {
 
 }
 Scanner.prototype.scan = function(tag) {
-  var allItems = loadAllItems();
+  var allItems = Information.loadAllItems();
   var tagArray = tag.split("-");
   var barcode = tagArray[0];
   var count = 1;
@@ -14,3 +17,5 @@ Scanner.prototype.scan = function(tag) {
   var cartItem = new CartItem(item, count);
   return cartItem;
 };
+
+module.exports = Scanner;

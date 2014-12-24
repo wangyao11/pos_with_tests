@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 function Inventory() {
 
 }
@@ -20,3 +22,5 @@ Inventory.prototype.toString = function(cart) {
 
   return inventoryText;
 };
+
+module.exports = Inventory;
