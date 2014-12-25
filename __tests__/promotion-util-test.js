@@ -1,0 +1,56 @@
+jest.dontMock('../src/model/promotion-util');
+jest.dontMock('../src/model/promotion');
+jest.dontMock('lodash');
+
+describe('promotion-util', function() {
+  var PromotionUtil;
+
+  beforeEach(function() {
+    PromotionUtil = require('../src/model/promotion-util');
+  });
+
+  describe('.judgeCartItem()', function() {
+
+    it('should return promotion number', function() {
+
+      var getPromotionCount = jest.genMockFn();
+      getPromotionCount.mockImplementation(function() {
+        this.promotionCount = 1;
+      });
+
+      var cartItem = {
+
+         'item' : {
+          'barcode' : 'ITEM000001',
+          'name' : '雪碧',
+          'unit' : '瓶',
+          'price' : 3
+        },
+        'count' : 5,
+        'promotionCount' : 0,
+        getPromotionCount : getPromotionCount
+      };
+
+      result = PromotionUtil.judgeCartItem(cartItem);
+
+      expect(cartItem.promotionCount).toBe(1);
+    });
+  });
+  describe('.getPromotionType()', function() {
+
+    it('should return promotion type',function() {
+
+      var cartItem = {
+        'item' : {
+          'barcode' : 'ITEM000001',
+        },
+        'count' : 5,
+        'promotionCount' : 0,
+      };
+
+      result = PromotionUtil.getPromotionType(cartItem);
+
+      expect('BUY_TWO_GET_ONE_FREE').toBe(result);
+    });
+  });
+});
