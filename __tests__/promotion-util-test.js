@@ -19,23 +19,20 @@ describe('promotion-util', function() {
       });
 
       var cartItem = {
-
-         'item' : {
+        'item' : {
           'barcode' : 'ITEM000001',
-          'name' : '雪碧',
-          'unit' : '瓶',
-          'price' : 3
         },
         'count' : 5,
         'promotionCount' : 0,
         getPromotionCount : getPromotionCount
       };
 
-      result = PromotionUtil.judgeCartItem(cartItem);
+      PromotionUtil.judgeCartItem(cartItem);
 
       expect(cartItem.promotionCount).toBe(1);
     });
   });
+  
   describe('.getPromotionType()', function() {
 
     it('should return promotion type',function() {
