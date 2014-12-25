@@ -44,7 +44,7 @@ describe('promotion-util', function() {
         'count' : 5,
       };
 
-      result = PromotionUtil.getPromotionType(cartItem);
+      var result = PromotionUtil.getPromotionType(cartItem);
 
       expect('BUY_TWO_GET_ONE_FREE').toBe(result);
     });
