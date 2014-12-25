@@ -2,7 +2,7 @@ var _ = require('lodash');
 var PromotionUtil = require('./promotion-util')
 
 function Cart() {
-   this.cartItems = [];
+  this.cartItems = [];
 }
 
 Cart.prototype.addCartItem = function(oneCartItem) {
