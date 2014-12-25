@@ -32,7 +32,7 @@ describe('promotion-util', function() {
       expect(cartItem.promotionCount).toBe(1);
     });
   });
-  
+
   describe('.getPromotionType()', function() {
 
     it('should return promotion type',function() {
