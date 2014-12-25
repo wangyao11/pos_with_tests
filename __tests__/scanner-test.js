@@ -14,8 +14,6 @@ describe('Scanner', function() {
 
       var cartItem = scanner.scan('ITEM000001');
 
-      // var expectCartItem = [{'barcode':'ITEM000001', 'name':'雪碧', 'unit':'瓶'， 'price':3},
-      //   'count':1}];
       expect(cartItem.count).toBe(1);
       expect(cartItem.item.barcode).toBe('ITEM000001');
       expect(cartItem.item.name).toBe('雪碧');
