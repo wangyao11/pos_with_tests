@@ -1,6 +1,3 @@
-var _ = require('lodash');
-var Information = require('./information');
-
 function Promotion(type, barcodes) {
     this.type = type;
     this.barcodes = barcodes || [];
