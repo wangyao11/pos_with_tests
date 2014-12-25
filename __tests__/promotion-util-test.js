@@ -42,7 +42,6 @@ describe('promotion-util', function() {
           'barcode' : 'ITEM000001',
         },
         'count' : 5,
-        'promotionCount' : 0,
       };
 
       result = PromotionUtil.getPromotionType(cartItem);
