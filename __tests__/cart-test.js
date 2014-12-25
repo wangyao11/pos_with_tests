@@ -51,6 +51,18 @@ describe('Cart', function() {
   describe('#getPromotionsText()', function() {
     it('should return promotionsText', function() {
 
-    })
+      var getPromotionText = jest.genMockFn();
+      getPromotionText.mockReturnValue('print');
+
+      cartItem.getPromotionText = getPromotionText;
+      cart.cartItems = [cartItem,cartItem];
+
+      var result = cart.getPromotionsText();
+
+      var promotionsText = 'print' +
+      'print';
+
+      expect(promotionsText).toBe(result);
+    });
   });
 });
