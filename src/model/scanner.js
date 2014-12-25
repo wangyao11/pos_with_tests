@@ -1,12 +1,12 @@
 var _ = require('lodash');
-var Information = require('./information');
+var Item = require('./item');
 var CartItem = require('./cart-item');
 
 function Scanner() {
 
 }
 Scanner.prototype.scan = function(tag) {
-  var allItems = Information.loadAllItems();
+  var allItems = Item.all();
   var tagArray = tag.split("-");
   var barcode = tagArray[0];
   var count = 1;
