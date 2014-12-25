@@ -43,7 +43,7 @@ describe('Cart', function() {
       var result = cart.getCartItemsText();
 
       var cartItemsText = 'print' +
-        'print';
+                          'print';
 
       expect(cartItemsText).toBe(result);
     })
