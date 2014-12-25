@@ -34,20 +34,23 @@ describe('Cart', function() {
   describe('#getCartItemsText()', function() {
     it('should return cartItemsText', function() {
 
-      var getCartItemsText = jest.genMockFn();
-      var cartItemsText = '名称：雪碧，数量：5瓶，单价：3.00(元)，小计：12.00(元)\n' +
-      '名称：荔枝，数量：2斤，单价：15.00(元)，小计：30.00(元)\n' +
-      '名称：方便面，数量：3袋，单价：4.50(元)，小计：9.00(元)\n';
-      getCartItemsText.mockReturnValue(cartItemsText);
+      var toInventoryText = jest.genMockFn();
+      toInventoryText.mockReturnValue('print');
 
-      var Cart ={
-        getCartItemsText : getCartItemsText
-      }
+      cartItem.toInventoryText = toInventoryText;
+      cart.cartItems = [cartItem,cartItem];
 
-      result = Cart.getCartItemsText(cartItem);
+      var result = cart.getCartItemsText();
+
+      var cartItemsText = 'print' +
+        'print';
 
       expect(cartItemsText).toBe(result);
     })
   });
+  describe('#getPromotionsText()', function() {
+    it('should return promotionsText', function() {
 
+    })
+  });
 });
