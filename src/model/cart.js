@@ -1,8 +1,10 @@
 var _ = require('lodash');
 var PromotionUtil = require('./judge-promotion')
+
 function Cart() {
    this.cartItems = [];
 }
+
 Cart.prototype.addCartItem = function(oneCartItem) {
   var cartItems = this.cartItems;
   var cartItem = _.find(cartItems, function(cartItem) {
