@@ -1,7 +1,9 @@
 jest.dontMock('../src/model/item');
 
 describe('Item', function() {
+
   describe('.all', function() {
+
     it('should return items', function(){
 
       var Item = require('../src/model/item');
