@@ -6,11 +6,12 @@ describe('Cart', function() {
   var cart;
   var cartItem;
   beforeEach(function() {
-    var Cart = require('../src/model/cart');
+    Cart = require('../src/model/cart');
     cart = new Cart();
     cartItem = {
       'item' : {
         'barcode' : 'ITEM000001',
+        'price' : 3.00,
       },
       'count' : 1,
     };
@@ -63,6 +64,25 @@ describe('Cart', function() {
       'print';
 
       expect(promotionsText).toBe(result);
+    });
+  });
+  describe('#getTotalPrices()', function() {
+    it('should return totalprices', function() {
+
+      cart.cartItems = [cartItem];
+      var result = cart.getTotalPrices();
+
+      expect(result).toBe(3);
+    });
+  });
+  describe('#getPromotionTotalPrice()', function() {
+    it('should return promotionTotalPrice', function() {
+
+      cartItem.promotionCount = 2;
+      cart.cartItems = [cartItem];
+      var result = cart.getPromotionTotalPrice();
+
+      expect(result).toBe(6);
     });
   });
 });
